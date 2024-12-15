@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login | StreamHub</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container">
+      <h1 class="logo">StreamHub</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="subscribe.html">Subscribe</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <section class="form-container">
+      <div class="form-content">
+        <h2 class="section-title">Log In to StreamHub</h2>
+        <form id="login-form" onsubmit="loginUser(event)">
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" name="login-email" required placeholder="Enter your email" />
+          </div>
+
+          <!-- Password Field -->
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="login-password" required placeholder="Enter your password" />
+          </div>
+
+          <button type="submit" class="btn-primary">Log In</button>
+
+          <p class="redirect-link">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </form>
+
+        <!-- Error Message -->
+        <div class="error-message" id="error-message" style="display: none;">
+          <p>Invalid email or password. Please try again.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 StreamHub. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="login.js"></script>
+</body>
+
+</html>

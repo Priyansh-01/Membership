@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sign Up | StreamHub</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container">
+      <h1 class="logo">StreamHub</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="subscribe.html">Subscribe</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <section class="form-container">
+      <div class="form-content">
+        <!-- Existing User Message -->
+        <div class="existing-user-message" id="existing-user-message" style="display: none;">
+          <p>You are already signed up! Please <a href="login.html">login</a> to continue.</p>
+        </div>
+
+        <!-- Sign Up Form -->
+        <h2 class="section-title">Sign Up to StreamHub</h2>
+        <form id="signup-form" onsubmit="signupUser(event)">
+          <!-- Full Name Field -->
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" name="signup-name" required placeholder="Enter your full name">
+          </div>
+          <!-- Email Address Field -->
+          <div class="form-group">
+            <label for="signup-email">Email Address</label>
+            <input type="email" id="signup-email" name="signup-email" required placeholder="Enter your email">
+          </div>
+          <!-- Password Field -->
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="signup-password" required placeholder="Create a password">
+          </div>
+          <button type="submit" class="btn-primary">Sign Up</button>
+        </form>
+
+        <!-- Thank You Message -->
+        <div class="thank-you-message" id="thank-you-message" style="display: none;">
+          <p>Thank you for signing up to StreamHub! Welcome aboard!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 StreamHub. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="sign.js"></script>
+  <script>
+    // Check if the user is already signed up based on the email (simulated with localStorage)
+    if (localStorage.getItem('user_email')) {
+      const existingUserMessage = document.getElementById('existing-user-message');
+      const email = document.getElementById('signup-email').value;
+      // Compare the email in the form with the stored one
+      if (localStorage.getItem('user_email') === email) {
+        existingUserMessage.style.display = 'block';
+        setTimeout(() => {
+          existingUserMessage.style.display = 'none';
+        }, 2000); // Hide message after 2 seconds
+      }
+    }
+  </script>
+</body>
+
+</html>
